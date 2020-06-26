@@ -1,0 +1,55 @@
+.verticalHeader {
+    background: rgba(247, 247, 247, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+}
+
+.verticalContent {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.locationTitle {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+    margin-right: 12px;
+    padding: 4px 0;
+}
+
+.locationWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.favouriteButton {
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.favIconStyle {
+    margin-right: 8px;
+}
+
+.favouriteTitleStyle {
+    font-size: 13px;
+    line-height: 20px;
+    color: #444;
+}
