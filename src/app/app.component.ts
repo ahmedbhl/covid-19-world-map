@@ -8,6 +8,7 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class AppComponent {
   title = 'covid19WorldMap';
+  darkmode = false;
 
   constructor(updates: SwUpdate) {
 

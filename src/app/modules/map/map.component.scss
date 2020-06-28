@@ -53,3 +53,138 @@
     line-height: 20px;
     color: #444;
 }
+
+mgl-map {
+    height: 100%;
+    width: 100%;
+  }
+
+  .map-darkMode {
+    background-color: transparent;
+    span {
+        color: #ececec !important;
+    }
+  }
+  
+  .mapboxgl-ctrl-top-right {
+    top: 60px !important;
+  }
+
+   .lang-button {
+     display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    place-content: space-evenly;
+    text-align: -webkit-center;
+    font-weight: 600;
+    margin: 0 3px 4px;
+    outline: none;
+    box-shadow: 0 8px 6px -6px black;
+}
+  .lang-button:hover {
+    background-color: #ececec !important;
+  }
+
+  .point-marker {
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #FF5922;
+  }
+
+  .titleInfoBox {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 7px;
+}
+  .statLine.divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 5px 0 4px 0;
+}  
+  .statLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    min-width: 160px;
+}
+
+.stat.total {
+    color: #DE3700;
+}
+
+.statCount {
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: right;
+    color: #767676;
+}
+
+.legendColor {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.stat {
+    flex: 1;
+    margin-right: 24px;
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #333333;
+}
+.statCount {
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: right;
+    color: #767676;
+}
+
+.point-marker-yellow {
+        background-color: #F4C363;
+        @extend .legendColor;
+  }
+
+  .point-marker-green {
+        background-color: #60BB69;
+        @extend .legendColor;
+
+  }
+
+  .point-marker-gray {
+        background-color: #767676;
+        @extend .legendColor;
+
+  }
+
+  ::ng-deep mgl-map mgl-popup {
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    padding: 10px 10px;
+    color: #000000;
+    background-color: rgba(255,255,255,1);
+    font-weight: normal;
+    font-size: 13px;
+    border-radius: 18px !important;
+    position: absolute;
+    z-index: 99999999;
+    box-sizing: border-box;
+    border: 2px solid #DDDDDD;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+}

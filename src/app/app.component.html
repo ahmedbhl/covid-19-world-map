@@ -1,19 +1,26 @@
 <div class="wholePage">
   <!-- Header -->
-  <div class="header">
+  <div class="header" [class.dark-mode]="darkMode">
     <img width="40" alt="Angular Logo" src="assets/icons/icon-72x72.png" />
     <span class="pageName"> Outil de surveillance de l'état du confinement COVID-19 </span>
     <div class="spacer"></div>
+    <label class="switch" for="checkbox">
+      <input type="checkbox" id="checkbox" [(ngModel)]="darkMode" />
+      <div class="slider round"></div>
+    </label>Enable Dark Mode!
+
   </div>
-  
+
   <!-- Content -->
-  <div class="content">
+  <div class="content" [class.dark-mode]="darkMode">
     <!-- Side Bar -->
     <div class="side-bar">
       <div class="tab"> </div>
     </div>
     <div class="verticalWrapper">
-      <router-outlet></router-outlet>
+      <app-map [darkMode]='darkMode'></app-map>
     </div>
   </div>
 </div>
+
+<!--<router-outlet></router-outlet>-->
