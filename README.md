@@ -7,8 +7,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Dependencies
 
 https://www.who.int/data/gho/info/gho-odata-api
+
 https://covid19api.com/
+
 https://docs.mapbox.com/mapbox-gl-js/api/
+
 https://github.com/Wykks/ngx-mapbox-gl#readme
 
 
