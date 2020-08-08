@@ -2,8 +2,24 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const prefixUrl = 'https://api.covid19api.com';
+
 export const environment = {
-  production: false
+
+  covid_api_url: `${prefixUrl}`,
+  covid_api_backend_type: 'typescript',
+
+  countries_api_url: `${prefixUrl}/countries`,
+  countries_api_backend_type: 'typescript',
+
+  /** used to know if it is a production environment or not */
+  production: false,
+
+  /** Environment platform name */
+  name: 'dev',
+
+  /** Activate Logs */
+  log: true,
 };
 
 /*

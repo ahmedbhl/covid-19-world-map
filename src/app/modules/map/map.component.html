@@ -1,7 +1,7 @@
 <div class="verticalHeader" [class.map-darkMode]="darkMode">
-  <div class="locationWrapper">
+  <div class="locationWrapper" *ngIf="slectedCountry">
     <span class="locationTitle">
-      Tunsia
+      {{slectedCountry}}
     </span>
     <div class="favouriteButton ">
       <span class="favIconStyle">
@@ -28,38 +28,40 @@
       <button class="lang-button" (click)="changeLangTo('ar')"> Ar </button>
     </mgl-control>
 
-    <mgl-marker #myMarker [lngLat]="[16.05, 48]">
-      <div class="point-marker"></div>
-    </mgl-marker>
-    <mgl-popup [marker]="myMarker">
-      <div class="titleInfoBox">France</div>
+    <mgl-geojson-source id="points" [data]="points"></mgl-geojson-source>
+
+    <mgl-layer *ngIf="points" id="points" source="points" type="circle" [paint]="{'circle-color': '#FF5922' }"
+      (click)="onClick($event)" (mouseEnter)="cursorStyle = 'pointer'" (mouseLeave)="cursorStyle = ''"></mgl-layer>
+
+    <mgl-popup *ngIf="selectedPoint" [feature]="selectedPoint">
+      <div class="titleInfoBox">{{selectedPoint.properties.country}}</div>
 
       <div class="statLine">
         <div class="stat total">Nombre total de cas</div>
-        <div class="statCount total">162 936</div>
+        <div class="statCount total">{{selectedPoint.properties.total}}</div>
       </div>
 
       <div class="statLine divider"></div>
       <div class="statLine">
         <div class="point-marker-yellow"></div>
-        <div class="stat">Actifs</div>
-        <div class="statCount">57 807</div>
+        <div class="stat">Active</div>
+        <div class="statCount">{{selectedPoint.properties.TotalConfirmed}}</div>
       </div>
 
       <div class="statLine">
         <div class="point-marker-green"></div>
-        <div class="stat">Actifs</div>
-        <div class="statCount">57 807</div>
+        <div class="stat">Recovered</div>
+        <div class="statCount">{{selectedPoint.properties.TotalRecovered}}</div>
       </div>
 
       <div class="statLine">
         <div class="point-marker-gray"></div>
-        <div class="stat">Actifs</div>
-        <div class="statCount">57 807</div>
+        <div class="stat">Fatal</div>
+        <div class="statCount">{{selectedPoint.properties.TotalDeaths}}</div>
       </div>
     </mgl-popup>
 
-    <mgl-control mglGeolocate [positionOptions]="{enableHighAccuracy: true }" [trackUserLocation]="true"></mgl-control>
+    <mgl-control mglGeolocate [positionOptions]="{enableHighAccuracy: true  }" [trackUserLocation]="true"></mgl-control>
 
   </mgl-map>
 </div>

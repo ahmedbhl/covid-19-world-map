@@ -1,13 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { MapComponent } from './modules/map/map.component';
-import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
-import {FormsModule} from '@angular/forms';
+import { Covid19Service } from './modules/map/service/covid19.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     NgxMapboxGLModule.withConfig({
       accessToken: 'pk.eyJ1Ijoid3lra3NzIiwiYSI6ImNqMjR6aTdmdzAwNHMzMnBvbjBucjlqNm8ifQ.6GjGpofWBVaIuSnhdXQb5w',
@@ -25,7 +29,7 @@ import {FormsModule} from '@angular/forms';
     }),
     FormsModule
   ],
-  providers: [],
+  providers: [Covid19Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
