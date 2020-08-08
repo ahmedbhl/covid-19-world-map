@@ -4,6 +4,14 @@ Covid-19 World Deconfinement Map
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
 
+## Dependencies
+
+https://www.who.int/data/gho/info/gho-odata-api
+https://covid19api.com/
+https://docs.mapbox.com/mapbox-gl-js/api/
+https://github.com/Wykks/ngx-mapbox-gl#readme
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -27,3 +35,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
